@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa para Minha Namorada</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .content {
+            position: relative;
+        }
+        #message {
+            font-size: 24px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        #buttons {
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s; /* Inicia após o texto */
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            background-color: transparent;
+            transition: transform 1s;
+            border-radius: 20px; /* Bordas arredondadas */
+        }
+        button#simButton:hover {
+            transform: translateX(0);
+        }
+        button#naoButton {
+            transform: translateX(0);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="message">Você está preparada?</div>
+        <div id="buttons">
+            <a href="pagina2.html"><button id="simButton">Sim</button></a>
+            <button id="naoButton" onclick="moveNaoButton()">Não</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript para lidar com a ação do botão "Não"
+        function moveNaoButton() {
+            const naoButton = document.getElementById('naoButton');
+            naoButton.style.transform = `translate(${Math.random() * (window.innerWidth - 150)}px, ${Math.random() * (window.innerHeight - 50)}px)`;
+        }
+    </script>
+</body>
+</html>

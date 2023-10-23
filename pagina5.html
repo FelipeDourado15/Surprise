@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa para Minha Namorada - Página 5</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .content {
+            position: relative;
+        }
+        #text-container {
+            font-size: 18px; /* Tamanho do texto um pouco menor */
+            margin: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            animation: typing 10s steps(40) 1s forwards;
+            display: none; /* Inicialmente oculto */
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        #buttons {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%; /* Define a largura máxima como 100% da tela */
+            max-height: 60vh; /* Define a altura máxima como 60% da altura da tela */
+            height: auto;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto; /* Centraliza a imagem horizontalmente */
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            background-color: transparent;
+            transition: transform 1s;
+            border-radius: 20px; /* Bordas arredondadas */
+        }
+        button#proximoButton:hover {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="text-container">
+            <!-- Insira o texto letra por letra aqui, com espaços entre as palavras -->
+            Achar o amor não é fácil, mas deve-se lutar por ele, porque uma vez achado, nunca será substituído, e graças a Deus eu te achei.
+        </div>
+        <div id="buttons">
+            <button id="comecarButton" onclick="startMessage()">Começar</button>
+        </div>
+
+        <img src="Imagem2_Amor.jpg" alt="Sua Imagem" />
+        <!-- Insira a imagem conforme desejado após criar a página -->
+
+    </div>
+    <script>
+        let textDisplayed = false;
+
+        // JavaScript para revelar o texto letra por letra
+        function startMessage() {
+            if (textDisplayed) return;
+            
+            const textContainer = document.getElementById('text-container');
+            textContainer.style.display = 'block'; // Mostra o contêiner de texto
+            textContainer.style.animation = 'typing 10s steps(40) 1s forwards';
+
+            textDisplayed = true;
+
+            document.getElementById('comecarButton').style.display = 'none'; // Esconde o botão "Começar"
+            document.getElementById('buttons').innerHTML += '<a href="pagina6.html"><button id="proximoButton">Próximo</button></a>';
+        }
+    </script>
+</body>
+</html>
